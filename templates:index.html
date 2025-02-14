@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Tresette Game</title>
+</head>
+<body>
+  <h1>Welcome to Tresette Game!</h1>
+  <p>Game logic is running...</p>
+  <!-- You can later add a form or buttons to interact with your game logic -->
+  <script>
+    // Example: Send a test move to your backend
+    async function testPlay() {
+      const response = await fetch('/play', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ player: 1, card: 'Ace of Hearts' })
+      });
+      const result = await response.json();
+      console.log(result);
+    }
+    
+    // Uncomment to test when the page loads
+    // testPlay();
+  </script>
+</body>
+</html>
